@@ -1,0 +1,12 @@
+[
+    {"origin": {"file":"0", "rank":0}, "destination": {"file":0, "rank":1}},
+    {"origin": {"file":0, "rank":"0"}, "destination": {"file":0, "rank":1}},
+    {"origin": {"file":0, "rank":0}, "destination": {"file":"0", "rank":1}},
+    {"origin": {"file":0, "rank":0}, "destination": {"file":0, "rank":"1"}},
+    {"origin": {"fle":0, "rank":0}, "destination": {"file":0, "rank":1}},
+    {"origin": {"file":0, "rnk":0}, "destination": {"file":0, "rank":1}},
+    {"origin": {"file":0, "rank":0}, "destination": {"ile":0, "rank":1}},
+    {"origin": {"file":0, "rank":0}, "destination": {"file":0, "ran":1}},
+    {"origin": {"file":0, "rank":0}},
+    {"destination": {"file":0, "rank":1}}
+]

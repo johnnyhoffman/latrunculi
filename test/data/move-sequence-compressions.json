@@ -1,0 +1,21 @@
+[
+    {
+        "compressed": "0,0,0,0",
+        "decompressed" : [{"origin" : { "rank": 0, "file": 0 }, "destination" : {"rank": 0, "file": 0 }}]
+    },
+    {
+        "compressed": "0,0,0,0/0,0,0,0",
+        "decompressed" : [
+            {"origin" : { "rank": 0, "file": 0 }, "destination" : {"rank": 0, "file": 0 }},
+            {"origin" : { "rank": 0, "file": 0 }, "destination" : {"rank": 0, "file": 0 }}
+        ]
+    },
+    {
+        "compressed": "0,0,1,3/1,2,3,4/0,1,5,9",
+        "decompressed" : [
+            {"destination" : { "rank": 1, "file": 3 }, "origin" : {"rank": 0, "file": 0 }},
+            {"origin" : { "file": 2, "rank": 1 }, "destination" : {"file": 4, "rank": 3 }},
+            {"destination" : { "file": 9, "rank": 5 }, "origin" : {"rank": 0, "file": 1 }}
+        ]
+    }
+]

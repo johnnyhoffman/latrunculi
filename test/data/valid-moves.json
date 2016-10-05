@@ -1,0 +1,4 @@
+[
+    {"origin": {"file":0, "rank":0}, "destination": {"file":0, "rank":1}},
+    {"destination": {"file":0, "rank":0}, "origin": {"file":0, "rank":1}}
+]

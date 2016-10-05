@@ -1,0 +1,597 @@
+/* all panes */
+
+* { 
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body {
+}
+
+body[data-pane="new-game"], body[data-pane="join"] {
+    animation: pulse 20s infinite;
+}
+
+body[data-pane="play"] {
+    background-color:white; 
+}
+
+@keyframes pulse {
+    0% {
+        background-color: #1600F0;
+    }
+    50% {
+        background-color: #C614EA;
+    }
+    100% {
+        background-color: #1600F0; 
+    }
+}
+
+input {
+    box-sizing: border-box;
+    display: block;
+    border: 3px solid;
+    font-size: 1.375em;
+    font-weight:700;
+}
+
+input[type=button]
+{
+    cursor:pointer;
+}
+
+::-webkit-input-placeholder {
+    color: white;
+    opacity: 1;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color: white;
+    opacity: 1;  
+}
+::-moz-placeholder {  /* Firefox 19+ */
+    color: white;
+    opacity: 1;  
+}
+:-ms-input-placeholder {  
+    color: white;
+    opacity: 1;  
+}
+
+.width-wrapper {
+    max-width:960px;
+    width: 100%;
+    height: 100vh;
+    position:relative;
+}
+
+.pane {
+    width:100%;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-40%);
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 4.5em;
+    font-weight:900;
+}
+
+.share-link {
+    font-size: 1.25em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.share-link-desc {
+    font-size: 1.25em;
+    font-weight: 400;
+    text-align: center;
+}
+
+#footer {
+    width: 100%;
+    color: white;
+    font-weight: 500;
+    font-size: 1em;
+    position: absolute; 
+    bottom: 0;
+    height: 40px;
+}
+
+#footer[data-pane="play"] {
+    color: #333333;
+}
+
+#footer[data-overlay-active] {
+    color: white;
+}
+
+#footer-left {
+    width: 60%;
+    float:left;
+}
+
+#home-footer,
+#about-footer,
+#rules-footer,
+#source-footer {
+    float: left;
+    margin-left: 25px;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+#home-footer {
+    margin-left: 40px;
+}
+
+#footer-right {
+    width: 40%;
+    text-align: right;
+    float: left;
+    cursor: pointer;
+}
+
+#author-footer {
+    margin-right: 40px;
+}
+
+#source-footer > a,
+#author-footer > a{
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#footer[data-pane="play"] a {
+    color: #333333;
+}
+
+#footer[data-overlay-active] a {
+    color: white;
+}
+
+#footer .dimming-text[data-hover] {
+    color: rgba(255,255,255,0.5);
+}
+
+#footer[data-pane="play"] .dimming-text[data-hover] {
+    color: rgba(51,51,51,0.5);
+}
+
+#footer[data-overlay-active] .dimming-text[data-hover] {
+    color: rgba(255,255,255,0.5);
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+#overlay[data-piece-color="white"] {
+    background: rgba(198,20,234,0.96)
+}
+
+#overlay[data-piece-color="black"] {
+    background: rgba(22,0,240,0.92)
+}
+
+#overlay-x {
+    width: 30px;
+    height:30px;
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    background: transparent;
+    stroke: white;
+    stroke-width: 3px;
+    z-index: 100;
+    cursor:pointer;
+}
+
+#overlay-x[data-hover] {
+    stroke: rgba(255,255,255,0.5);
+}
+
+#about-overlay, #rules-overlay, #winner-overlay, #error-overlay {
+    color: white;
+}
+
+#about-title, #rules-title{
+    margin-bottom: 20px;
+    width: 66%;
+}
+
+#winner-title {
+    margin-bottom: 60px;
+    width: 66%;
+}
+
+#error-title {
+    margin-bottom: 50px;
+    width: 66%;
+}
+
+#about-desc, #rules-desc, #error-desc, #rules-overlay > ul {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.25;
+    width: 66%;
+    line-height: 1.5em;
+}
+
+#rules-overlay > ul {
+    width: 60%;
+    text-align: left;
+}
+
+#about-desc > a,
+#rules-desc > a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+#winner-new-game-button, #error-okay-button, #error-home-button {
+    border-color: white;
+    color: white;
+    border-width: 4px;
+    height:80px;
+    background-color: transparent;
+}
+
+#winner-new-game-button {
+    width:200px;
+}
+
+#error-button-row {
+    margin-top: 60px;
+    width: 50%;
+    text-align: center;
+}
+
+#error-okay-button, #error-home-button {
+    width: 45%;
+    float:left;
+}
+
+#error-home-button {
+    margin-left: 10%;
+}
+
+#error-okay-button[data-solo] {
+    float:none;
+}
+
+#overlay .dimming-text[data-hover] {
+    color: rgba(255,255,255,0.5);
+}
+
+.clearfix {
+    clear:both;
+}
+
+/* new game pane */
+
+#new-game-pane {
+}
+
+#new-game-pane .title {
+    color: white;
+    margin-bottom: 40px;
+}
+
+#new-game-sub-title {
+    width: 65%;
+    margin: auto;
+
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.25em;
+    color: white;
+    margin-bottom: 60px;
+}
+
+#new-game-button {
+    color: white;
+    border-width: 4px;
+    background-color: transparent;
+    height:80px;
+    width:200px;
+}
+
+/* join pane */
+
+#join-pane {
+}
+
+#join-pane .title {
+    color: white;
+    margin-bottom: 60px;
+}
+
+#join-row {
+    width: 58%;
+    text-align: center;
+}
+
+#join-input {
+    margin: 0;
+    background-color: transparent;
+    color: white;
+    height: 80px;
+    width: 73%;
+    text-align: left;
+    padding-left: 7.5%;
+    float: left;
+}
+
+#join-button {
+    margin:0;
+    margin-left: 5%;
+    color: white;
+    border-color: white;
+    background-color: transparent;
+    height:80px;
+    width:22%;
+    float: left;
+}
+
+#join-button[disabled]
+{
+    color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.5);
+}
+
+#join-pane .share-link-desc {
+    color: white;
+    margin-top: 60px;
+}
+
+#join-pane .share-link {
+    color: white;
+    margin-top: 15px;
+}
+
+/* play pane */
+
+#play-pane {
+
+}
+
+#play-pane .title {
+    color: #333333;
+    margin-bottom:35px;
+}
+
+/* Approach for preserving rectangular ratio taken from Nathan Ryan's answer at
+ * http://stackoverflow.com/questions/5445491/height-equal-to-dynamic-width-css-fluid-layout
+ * (implying stackoverflow's MIT license)
+ */
+#board-container {
+    margin: auto;
+    display: inline-block;
+    position: relative;
+    width:50%;
+}
+#board-spacer {
+    margin-top: 66.66%;
+}
+#board {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(50%);
+    box-sizing: border-box;
+    border: 3px solid #333333;
+}
+
+.board-rank {
+    height: 12.5%;
+}
+
+.board-square {
+    /* sized only for 8x12 boards */
+    width: 8.33%;
+    height: 100%;
+    float: left;
+}
+
+.board-square[data-parity="even"] {
+    background-color: #F6F6F6;
+}
+
+.board-square[data-parity="odd"] {
+    background-color: #FFFFFF;
+}
+
+.board-piece {
+    width: 100%;
+    height: 100%;
+    stroke-width: 7%;
+    fill: transparent;
+}
+
+.board-piece[data-piece-color="white"] {
+    stroke: #C614EA;
+}
+
+.board-piece[data-piece-color="black"] {
+    stroke: #1600F0;
+}
+
+.board-piece[data-hover][data-piece-color='white'] {
+    fill: #C614EA;
+}
+
+.board-piece[data-hover][data-piece-color='black'] {
+    fill: #1600F0;
+}
+
+.board-piece[data-selected][data-piece-color='white'] {
+}
+
+.board-piece[data-selected][data-piece-color='black'] {
+}
+
+.board-move {
+    width: 100%;
+    height: 100%;
+    stroke-width: 7%;
+    fill: transparent;
+    stroke: #333333;
+}
+
+.board-move[data-hover] {
+    fill: #333333;
+}
+
+#turn-indicator-row 
+{
+    margin-top:35px;
+    width: 50%;
+    height: 80px;
+}
+
+.turn-indicator {
+    box-sizing: border-box;
+    border: 3px solid;
+    background-color: transparent;
+    margin: 0;
+    height:100%;
+    width: 46%;
+    float: left;
+}
+
+.turn-indicator > p {
+    font-weight: 600;
+    font-size: 1.375em;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+}
+
+#self-turn-indicator {
+    margin-right: 8%
+}
+
+.turn-indicator[data-piece-color="white"] {
+    border-color: #C614EA;
+    color: #C614EA;
+}
+
+.turn-indicator[data-piece-color="white"][data-is-turn] {
+    background-color: #C614EA;
+    color: white;
+}
+
+.turn-indicator[data-piece-color="black"] {
+    border-color: #1600F0;
+    color: #1600F0;
+}
+
+.turn-indicator[data-piece-color="black"][data-is-turn] {
+    background-color: #1600F0;
+    color: white;
+}
+
+#play-pane .share-link-desc {
+    font-size: 1em;
+    color: #333333;
+    margin-top: 35px;
+}
+
+#play-pane .share-link {
+    font-size: 1em;
+    color: #333333;
+    margin-top: 15px;
+}
+
+/* button hovers */
+
+#join-button:hover,
+#new-game-button:hover,
+#error-okay-button:hover,
+#error-home-button:hover,
+#winner-new-game-button:hover
+{
+    color: rgba(255,255,255,0.5);
+    border-color: rgba(255,255,255,0.5);    
+}
+
+@media only screen and (max-device-width: 420px) {
+
+
+    .title {
+        font-size: 6em;
+        width: 95%;
+    }
+
+    #new-game-sub-title, #about-desc, #rules-desc, #error-desc {
+        font-size: 1.75em;
+        width: 85%;
+    }
+    #rules-overlay > ul {
+        font-size: 1.75em;
+        width: 80%;
+    }
+    
+    #board-container {  
+        width: 95%;
+    }
+    
+    #board {
+        transform: translateX(2.5%);
+    }
+    
+    #join-row {
+        width: 85%;
+    }
+    
+    #turn-indicator-row {
+        width: 95%;
+    }
+    
+    .turn-indicator > p {
+        font-size: 2em;
+    }
+
+    #overlay-x {
+        stroke-width: 6px;
+        width: 60px;
+        height:60px;
+    }
+
+    #play-pane .share-link-desc,
+    #play-pane .share-link {
+        font-size: 1.5em;
+    }
+    #join-pane .share-link-desc,
+    #join-pane .share-link {
+        font-size: 1.75em;
+    }
+
+    #footer {
+        margin-left:2.5%;
+        width: 95%;
+        font-size: 1.5em;
+        height: 50px;
+    }
+
+    #home-footer {
+        margin-left: 0px;
+    }
+
+    #author-footer {
+        margin-right: 0px;
+    }
+}

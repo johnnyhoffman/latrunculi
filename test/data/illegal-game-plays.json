@@ -1,0 +1,226 @@
+[
+    {
+        "start" : {
+            "turn":"black",
+            "board": [
+                [
+                    {"rank":0,"file":0,"type":"man","color":"black"},
+                    {"rank":0,"file":1,"type":"man","color":"black"},
+                    {"rank":0,"file":2,"type":"man","color":"black"},
+                    {"rank":0,"file":3,"type":"man","color":"black"}
+                ],
+                [
+                    null,
+                    null,
+                    {"rank":1,"file":2,"type":"dux","color":"black"},
+                    null
+                ],
+                [
+                    null,
+                    {"rank":2,"file":1,"type":"dux","color":"white"},
+                    null,
+                    null
+                ],
+                [
+                    {"rank":3,"file":0,"type":"man","color":"white"},
+                    {"rank":3,"file":1,"type":"man","color":"white"},
+                    {"rank":3,"file":2,"type":"man","color":"white"},
+                    {"rank":3,"file":3,"type":"man","color":"white"}
+                ]
+            ]
+        },
+        "moveSeq": "0,0,0,0"
+    },
+    {
+        "start" : {
+            "turn":"black",
+            "board": [
+                [
+                    {"rank":0,"file":0,"type":"man","color":"black"},
+                    {"rank":0,"file":1,"type":"man","color":"black"},
+                    {"rank":0,"file":2,"type":"man","color":"black"},
+                    {"rank":0,"file":3,"type":"man","color":"black"}
+                ],
+                [
+                    null,
+                    null,
+                    {"rank":1,"file":2,"type":"dux","color":"black"},
+                    null
+                ],
+                [
+                    null,
+                    {"rank":2,"file":1,"type":"dux","color":"white"},
+                    null,
+                    null
+                ],
+                [
+                    {"rank":3,"file":0,"type":"man","color":"white"},
+                    {"rank":3,"file":1,"type":"man","color":"white"},
+                    {"rank":3,"file":2,"type":"man","color":"white"},
+                    {"rank":3,"file":3,"type":"man","color":"white"}
+                ]
+            ]
+        },
+        "moveSeq": "0,0,1,1"
+    },
+    {
+        "start" : {
+            "turn":"black",
+            "board": [
+                [
+                    {"rank":0,"file":0,"type":"man","color":"black"},
+                    {"rank":0,"file":1,"type":"man","color":"black"},
+                    {"rank":0,"file":2,"type":"man","color":"black"},
+                    {"rank":0,"file":3,"type":"man","color":"black"}
+                ],
+                [
+                    null,
+                    null,
+                    {"rank":1,"file":2,"type":"dux","color":"black"},
+                    null
+                ],
+                [
+                    null,
+                    {"rank":2,"file":1,"type":"dux","color":"white"},
+                    null,
+                    null
+                ],
+                [
+                    {"rank":3,"file":0,"type":"man","color":"white"},
+                    {"rank":3,"file":1,"type":"man","color":"white"},
+                    {"rank":3,"file":2,"type":"man","color":"white"},
+                    {"rank":3,"file":3,"type":"man","color":"white"}
+                ]
+            ]
+        },
+        "moveSeq": "3,3,2,3"
+    },
+    {
+        "start" : {
+            "turn":"black",
+            "board": [
+                [
+                    {"rank":0,"file":0,"type":"man","color":"black"},
+                    {"rank":0,"file":1,"type":"man","color":"black"},
+                    {"rank":0,"file":2,"type":"man","color":"black"},
+                    {"rank":0,"file":3,"type":"man","color":"black"}
+                ],
+                [
+                    null,
+                    null,
+                    {"rank":1,"file":2,"type":"dux","color":"black"},
+                    null
+                ],
+                [
+                    null,
+                    {"rank":2,"file":1,"type":"dux","color":"white"},
+                    null,
+                    null
+                ],
+                [
+                    {"rank":3,"file":0,"type":"man","color":"white"},
+                    {"rank":3,"file":1,"type":"man","color":"white"},
+                    {"rank":3,"file":2,"type":"man","color":"white"},
+                    {"rank":3,"file":3,"type":"man","color":"white"}
+                ]
+            ]
+        },
+        "moveSeq": "0,0,0,1"
+    },
+    {
+        "start" : {
+            "turn":"black",
+            "board": [
+                [
+                    {"rank":0,"file":0,"type":"man","color":"black"},
+                    {"rank":0,"file":1,"type":"man","color":"black"},
+                    {"rank":0,"file":2,"type":"man","color":"black"},
+                    {"rank":0,"file":3,"type":"man","color":"black"}
+                ],
+                [
+                    null,
+                    null,
+                    {"rank":1,"file":2,"type":"dux","color":"black"},
+                    null
+                ],
+                [
+                    null,
+                    {"rank":2,"file":1,"type":"dux","color":"white"},
+                    null,
+                    null
+                ],
+                [
+                    {"rank":3,"file":0,"type":"man","color":"white"},
+                    {"rank":3,"file":1,"type":"man","color":"white"},
+                    {"rank":3,"file":2,"type":"man","color":"white"},
+                    {"rank":3,"file":3,"type":"man","color":"white"}
+                ]
+            ]
+        },
+        "moveSeq": "0,0,1,0/1,0,0,0"
+    },
+    {
+        "start" : {
+            "turn":"black",
+            "board": [
+                [
+                    {"rank":0,"file":0,"type":"man","color":"black"},
+                    {"rank":0,"file":1,"type":"man","color":"black"},
+                    {"rank":0,"file":2,"type":"man","color":"black"},
+                    {"rank":0,"file":3,"type":"man","color":"black"}
+                ],
+                [
+                    null,
+                    null,
+                    {"rank":1,"file":2,"type":"dux","color":"black"},
+                    null
+                ],
+                [
+                    null,
+                    {"rank":2,"file":1,"type":"dux","color":"white"},
+                    null,
+                    null
+                ],
+                [
+                    {"rank":3,"file":0,"type":"man","color":"white"},
+                    {"rank":3,"file":1,"type":"man","color":"white"},
+                    {"rank":3,"file":2,"type":"man","color":"white"},
+                    {"rank":3,"file":3,"type":"man","color":"white"}
+                ]
+            ]
+        },
+        "moveSeq": "0,3,0,4"
+    },
+    {
+        "start" : {
+            "turn":"black",
+            "board": [
+                [
+                    {"rank":0,"file":0,"type":"man","color":"black"},
+                    {"rank":0,"file":1,"type":"man","color":"black"},
+                    {"rank":0,"file":2,"type":"man","color":"black"},
+                    {"rank":0,"file":3,"type":"man","color":"black"}
+                ],
+                [
+                    null,
+                    null,
+                    {"rank":1,"file":2,"type":"dux","color":"black"},
+                    null
+                ],
+                [
+                    null,
+                    {"rank":2,"file":1,"type":"dux","color":"white"},
+                    null,
+                    null
+                ],
+                [
+                    {"rank":3,"file":0,"type":"man","color":"white"},
+                    {"rank":3,"file":1,"type":"man","color":"white"},
+                    {"rank":3,"file":2,"type":"man","color":"white"},
+                    {"rank":3,"file":3,"type":"man","color":"white"}
+                ]
+            ]
+        },
+        "moveSeq": "3,3,4,3"
+    }
+]

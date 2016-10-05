@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Latrunculi</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700,800,900" rel="stylesheet">
+        <script src="main.bundle.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div class="width-wrapper">
+            <div class="pane" id="new-game-pane" style="display:none">
+                <p class="title">Latrunculi</p>
+                <p id="new-game-sub-title">Lactrunculi (or ludus latruncolonum) is a two-player board game that was played during the Roman Empire.</p>
+                <input id="new-game-button" type="button" value="New game"/>
+            </div>
+
+            <div class="pane" id="join-pane" style="display:none">
+                <p class="title">Latrunculi</p>
+                <div id="join-row">
+                    <input id="join-input" placeholder="Type name here..."/>
+                    <input id="join-button" type="button" value="Join"/>
+                    <div class="clearfix"></div>
+                </div>
+                <p class="share-link-desc">Share this link with a friend so they can join too.</p>
+                <p class="share-link">http://tinyurl.com/game</p>
+            </div>
+            <div class="pane" id="play-pane" style="display:none">  
+                <p class="title">Latrunculi</p>
+                <div id="board-container">
+                    <div id="board-spacer"></div>
+                    <div id="board"></div>
+                </div>
+                <div id="turn-indicator-row">
+                    <div class="turn-indicator" id="self-turn-indicator"> 
+                        <p>player1</p> 
+                    </div>
+                    <div class="turn-indicator" id="opponent-turn-indicator" data-is-turn> 
+                        <p>player2</p> 
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <p class="share-link-desc" style="display:none">Share this link with a friend so they can join too.</p>
+                <p class="share-link" style="display:none">http://tinyurl.com/game</p>
+            </div>
+            <div id="overlay" data-piece-color="black" style="display:none">
+                <div class="width-wrapper">
+                    <div id="about-overlay" class="pane">
+                        <p id="about-title" class="title">About</p>
+                        <p id="about-desc">
+                        Latrunculi (or ludus latrunculorum) is a two-player strategy board game that dates back over
+                        two thousand years. Much of the game's history, along with the specifics of its rules, have
+                        been lost over time. Like the original game, this web version of the game requires an opponent.
+                        After creating a new game you can send the game link to a friend, or just open it in a second
+                        window to try it out on your own.
+                        <br/><br>
+                        Learn more about the history of Latrunculi <a class="dimming-text" href="https://en.wikipedia.org/wiki/Ludus_latrunculorum" target="_blank">here</a>.
+                        </p>
+                    </div>
+                    <div id="rules-overlay" class="pane">
+                        <p id="rules-title" class="title">Rules</p>
+                        <p id="rules-desc">
+                        The original rules of latrunculi have been lost in history, so this version chooses to follow <a class="dimming-text" href="https://en.wikipedia.org/wiki/Ludus_latrunculorum#Kowalski.27s_reconstruction" target="_blank">Kowalski's reconstruction</a> of the game rules. These rules are simple:
+                        <br/><br/>
+                        </p>
+                        <ul>
+                            <li>Each piece may move any unobstructed distance along a rank (column) or file (row).</li>
+                            <li>A man (the circular piece) is captured if the enemy places a piece adjacent to it on each side in an orthogonal line.</li>
+                            <li>If a man is moved voluntarily between two enemy pieces, it is not captured.</li>
+                            <li>A man in a corner is captured if the opponent places his men on the two squares adjacent to the corner.</li>
+                            <li>The dux (the triangular piece) cannot be captured. It is immobilized if blocked on all four sides. A player who immobilizes the enemy's dux wins the game, even if some of the obstruction is by the dux's own men.</li>
+                        </ul>
+                    </div>
+                    <div id="winner-overlay" class="pane">
+                        <p id="winner-title" class="title">Winner!</p>
+                        <input id="winner-new-game-button" type="button" value="New game"/>
+                    </div>
+                    <div id="error-overlay" class="pane">
+                        <p id="error-title" class="title">Error</p>
+                        <p id="error-desc">
+                        Error desc.
+                        </p>
+                        <div id="error-button-row">
+                            <input id="error-okay-button" type="button" value="Okay"/>
+                            <input id="error-home-button" type="button" value="Home page"/>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+                <svg id="overlay-x" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0%" y1="0%" x2="100%" y2="100%"/>
+                    <line x1="100%" y1="0%" x2="0%" y2="100%"/>
+                </svg>
+            </div>
+            <div id="footer">
+                <div id="footer-left">
+                    <p id="home-footer" class="dimming-text">Home</p>
+                    <p id="about-footer" class="dimming-text">About</p>
+                    <p id="rules-footer" class="dimming-text">Rules</p>
+                    <p id="source-footer"><a class="dimming-text" href="http://github.com/johnnyhoffman/latrunculi" target="_blank">Source</a></p>
+                </div>
+                <div id="footer-right">
+                    <p id="author-footer"><a class="dimming-text" href="http://johnnyhoffman.com" target="_blank">Created by Johnny Hoffman</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

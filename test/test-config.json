@@ -1,0 +1,19 @@
+{
+    "serverEndpoint":"http://127.0.0.1:3000",
+    "couch":{
+        "endpoint":"http://127.0.0.1:5984",
+        "dbname":"test-ludus"
+    },
+    "dynamo": {
+        "aws": {
+            "region": "us-west-2",
+            "accessKeyId": "YOUR_ACCESS_KEY_ID",
+            "secretAccessKey": "YOUR_SECRET_ACCESS_KEY"
+        },
+        "provisionedThroughput":{ 
+            "ReadCapacityUnits": 10,
+            "WriteCapacityUnits": 10
+        },
+        "tableName": "test-ludus"
+    }
+}
