@@ -36,26 +36,27 @@ Before you run the server, you'll have to set up your database and set some conf
 Currently, there are two database options: DynamoDB and CouchDB. I am not going to go into detail of how to get started with these products in general, but basically:
 
 * If you want to use CouchDB as the latrunculi database, you'll need to have CouchDB running at an HTTP endpoint accessible from your latrunculi server (the easiest place is port 5984 on your localhost). In `config.js` set 
-	* `exports.storage` to `couch`
-	* `exports.couch.endpoint` to your CouchDB endpoint
-	* `exports.couch.dbname` to whatever you would like the latrunculi database to be named
+ * `exports.storage` to `couch`
+ * `exports.couch.endpoint` to your CouchDB endpoint
+ * `exports.couch.dbname` to whatever you would like the latrunculi database to be named
 * If you want to use DynamoDB as the latrunculi database, you'll need an AWS account and an identity with DynamoDB permissions (e.g. an IAM user with carefully scoped permissions, or your root AWS permissions if you aren't familiar with AWS and aren't worried about the security risks). In `config.js` set
-	* `exports.storage` to `dynamo`
-	* `exports.dynamo.aws` to a config object that is approprate for [`aws.config.update`](http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html#Hard-Coding_Credentials). For example 
-	```
-		{ 
-			region: "us-west-2",
-  			accessKeyId: 'YOUR_KEY_ID',
-       	secretAccessKey: 'YOUR_SECRET_KEY'
-   		}
-   	```
-   * `exports.dynamo.provisionedThroughput` to an object describing the table's throughput capacity, e.g. 
-	```{
-       	ReadCapacityUnits: 10,
-       	WriteCapacityUnits: 10
-    	}
-   	```
-   * `exports.dynamo.tableName` to whatever you would like the the latrunculi table to be named
+ * `exports.storage` to `dynamo`
+ * `exports.dynamo.aws` to a config object that is approprate for [`aws.config.update`](http://docs.aws.amazon.com/AWSJavaScriptSDK/guide/node-configuring.html#Hard-Coding_Credentials). For example 
+  ```javascript
+  { 
+    region: "us-west-2",
+    accessKeyId: 'YOUR_KEY_ID',
+    secretAccessKey: 'YOUR_SECRET_KEY'
+  }
+  ```
+ * `exports.dynamo.provisionedThroughput` to an object describing the table's throughput capacity, e.g. 
+  ```javascript
+  {
+    ReadCapacityUnits: 10,
+    WriteCapacityUnits: 10
+  }
+  ```
+ * `exports.dynamo.tableName` to whatever you would like the the latrunculi table to be named
 
 ##### Running
 With the config set, you can finally run `npm start` to start the server. 
@@ -82,93 +83,95 @@ The following forms are used in the requests and responses:
 * `PIECE_TYPE`: Type of a piece on the board. Either `"dux"` or `"man"`.
 * `INDEX`: a zero-based index for either the rank or file (i.e. row or column) of a board.
 * `PIECE`: an object of the form
-```
-{
-	rank: INDEX,
-	file: INDEX,
-	type: PIECE_TYPE,
-	color: COLOR
-}
-```
+  ```javascript
+  {
+    rank: INDEX,
+    file: INDEX,
+    type: PIECE_TYPE,
+    color: COLOR
+  }
+  ```
+
 * `BOARD`: an array of arrays, where each inner array is a rank (i.e. board row). Each rank array element is a `PIECE` if there is a piece at that position on the board, or null otherwise.
 * `GAME_VIEW`: a complete representation of the game's state, from a specific player's perspective. Follows this form:
-```
-	{
-    	gameId: GAME_ID,
-       playerId: PLAYER_ID,
-       playerName: PLAYER_NAME,
-       opponentName: PLAYER_NAME,
-       playerColor: COLOR,
-       turn: COLOR,
-       winner: COLOR,
-       board: BOARD
-	}			
-```
+  ```javascript
+  {
+    gameId: GAME_ID,
+    playerId: PLAYER_ID,
+    playerName: PLAYER_NAME,
+    opponentName: PLAYER_NAME,
+    playerColor: COLOR,
+    turn: COLOR,
+    winner: COLOR,
+    board: BOARD
+  }			
+  ```
+
 * `MOVE`: a string of form `"r1,f1,r2,f2"` where is (`r1`,`f1`) is the coordinates of piece's origin and (`r2`,`f2`) is the coordinates of piece's destination.
 
 The API supports the following operations:
 
 * `/api/new`
-	* Create a new game
-	* Expects 
-	```
-		{
-			config: NEW_GAME_CONFIG // optional
-		}			
-	```
-	* Returns 
-	```
-		{
-			id: GAME_ID
-		}
-	```
+ * Create a new game
+ * Expects 
+  ```javascript
+  {
+    config: NEW_GAME_CONFIG // optional
+  }			
+  ```
+ * Returns 
+  ```javascript
+  {
+    id: GAME_ID
+  }
+  ```
 * `/api/join`
-	* Join an existing game
-	* Expects 
-	```
-		{
-			id: GAME_ID,
-			name: PLAYER_NAME
-		}			
-	```
-	* Returns `GAME_VIEW`
+ * Join an existing game
+ * Expects 
+  ```javascript
+  {
+    id: GAME_ID,
+    name: PLAYER_NAME
+  }			
+  ```
+ * Returns `GAME_VIEW`
 * `/api/state`
-	* Gets the state of a game
-	* Expects 
-	```
-		{
-			gameId: GAME_ID,
-			playerId: PLAYER_ID
-		}			
-	```
-	* Returns `GAME_VIEW`
+ * Gets the state of a game
+ * Expects 
+  ```javascript
+  {
+    gameId: GAME_ID,
+    playerId: PLAYER_ID
+  }			
+  ```
+ * Returns `GAME_VIEW`
 * `/api/waitstate`
-	* Gets the state of a game when it is the given player's turn (meant to be long-polled)
-	* Expects 
-	```
-		{
-			gameId: GAME_ID,
-			playerId: PLAYER_ID
-		}			
-	```
-	* Returns `GAME_VIEW`
+ * Gets the state of a game when it is the given player's turn (meant to be long-polled)
+ * Expects 
+  ```javascript
+  {
+    gameId: GAME_ID,
+    playerId: PLAYER_ID
+  }			
+  ```
+ * Returns `GAME_VIEW`
 * `/api/move`
-	* Make a move
-	* Expects 
-	```
-		{
-			gameId: GAME_ID,
-			playerId: PLAYER_ID,
-			move: MOVE
-		}
-	```
-	* Returns `GAME_VIEW`
+ * Make a move
+ * Expects 
+  ```javascript
+  {
+    gameId: GAME_ID,
+    playerId: PLAYER_ID,
+    move: MOVE
+  }
+  ```
+ * Returns `GAME_VIEW`
 
 Errors manifest in an error status code, and an error object of the form 
-```
+```javascript
 {
-	error: ERROR_NAME,
-	message: STRING
+  error: ERROR_NAME,
+  message: STRING
 }
 ```
 
