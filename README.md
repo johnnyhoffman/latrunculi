@@ -1,6 +1,6 @@
 ## Latrunculi
 
-Web app for playing the game Latrunculi (aka Ludus Latrunculorum). I'm hosting an instance of the game [here](latrunculi.johnnyhoffman.com). Check out the [wikipedia article](https://en.wikipedia.org/wiki/Ludus_latrunculorum) for more about the ancient board game.
+Web app for playing the game Latrunculi (aka Ludus Latrunculorum). I'm hosting an instance of the game [here](http://latrunculi.johnnyhoffman.com). Check out the [wikipedia article](https://en.wikipedia.org/wiki/Ludus_latrunculorum) for more about the ancient board game.
 
 ### Motivation
 
